@@ -9,10 +9,13 @@ const {PORT = 3000} = process.env
 const server = express()
 
 server.get('/', (req, res) => {
-  res.send({
-    status: 'success',
-    response: {},
-  })
+  res.send(
+    {
+      status: 'success',
+      response: {},
+    },
+    200,
+  )
 })
 
 // CODE HERE
