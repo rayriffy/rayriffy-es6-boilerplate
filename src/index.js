@@ -9,12 +9,10 @@ const {PORT = 3000} = process.env
 const server = express()
 
 server.get('/', (req, res) => {
-  res.send(
-    {
-      status: 'success',
-      response: {},
-    }
-  )
+  res.send({
+    status: 'success',
+    response: {},
+  })
 })
 
 // CODE HERE
@@ -29,6 +27,4 @@ server.get('*', (req, res) => {
   )
 })
 
-server
-  .use(bodyParser.json())
-  .listen(PORT, () => console.log(`App listening on port ${PORT}!`))
+server.use(bodyParser.json()).listen(PORT, () => console.log(`App listening on port ${PORT}!`))
